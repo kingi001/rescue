@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Logistics',
+    'title' => 'Rescue Centre',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>LOGISTICS</b>',
+    'logo' => '<b>RESCUE CENTRE</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -302,15 +302,15 @@ return [
         ],
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
+        // [
+        //     'type' => 'sidebar-menu-search',
+        //     'text' => 'search',
+        // ],
+        // [
+        //     'text' => 'blog',
+        //     'url'  => 'admin/blog',
+        //     'can'  => 'manage-blog',
+        // ],
         // [
         //     'text'        => 'pages',
         //     'url'         => 'admin/pages',
@@ -319,110 +319,136 @@ return [
         //     'label_color' => 'success',
         // ],
           [
-            'text'        => 'Trucks',
-            'url'         => 'admin/trucks',
-            'icon'        => 'fas fa-truck',
-            'label'       => 4,
+            'text'        => 'Dashboard',
+            'url'         => '/',
+            'icon'        => 'fas fa-tachometer-alt',
             'label_color' => 'success',
         ],
+        // [
+        //     'text'        => 'Rescue Cases',
+        //     'url'         => 'admin/rescue_cases',
+        //     'icon'        => 'fas fa-clipboard-list',
+        //     'label'       => 10,
+        //     'label_color' => 'success'
+        //     ,
+        // ],
+
         [
-            'text'        => 'Drivers',
-            'url'         => 'admin/drivers',
-            'icon'        => 'far fa-smile',
-            'label'       => 10,
-            'label_color' => 'primary',
+
+            'text'    => 'Rescue Cases',
+            'icon'    => 'fas fa-clipboard-list',
+            'submenu' => [
+                [
+                    'text' => 'View All Cases',
+                    'icon' => 'fas fa-list-alt',
+                    
+                    'url'  => 'admin/rescue_case',
+                ],
+                
+                [
+                    'text' => 'Add New Cases',
+                    'icon' => 'fas fa-plus-circle',
+                    'url'  => 'admin/rescue_case/create',
+                ],
+               
+            ],
         ],
         [
-            'text'        => 'Insurance',
-            'url'         => 'admin/insurance',
-            'icon'        => 'fas fa-shield-alt',
-            'label'       => 4,
-            'label_color' => 'secondary',
+
+            'text'    => 'Children',
+            'icon'    => 'fas fa-child',           
+            'can'     => 'view children',
+            'submenu' => [
+                [
+                    'text' => 'View All Children',
+                    'icon' => 'fas fa-list',
+                    
+                    'url'  => 'admin/children',
+                ],
+                
+                [
+                    'text' => 'Add New Child Profile',
+                    'icon' => 'fas fa-plus-circle',
+                    'url'  => 'admin/children/create',
+                ],
+               
+            ],
         ],
+
         [
-            'text'        => 'Towns & stations',
-            'url'         => 'admin/towns&stations',
-            'icon'        => 'fas fa-directions',
-            'label'       => 4,
-            'label_color' => 'info',
-        ],
-        [
-            'text'        => 'Expenses & Billings',
-            'url'         => 'admin/expenses&billings',
-            'icon'        => 'fas fa-coins',
-            'label'       => 15,
-            'label_color' => 'warning',
+            'text'    => 'Directors',
+            'icon'    => 'fas fa-user-tie',
+            'submenu' => [
+                [
+                    'text' => 'View All Directors',
+                    'icon' => 'fas fa-list-alt',
+                    
+                    'url'  => 'admin/directors',
+                ],
+                
+                [
+                    'text' => 'Add New Director',
+                    'icon' => 'fas fa-plus-circle',
+                    'url'  => 'admin/directors/create',
+                ],
+              
+            ],
         ],
        
         [
-            'text'        => 'store & inventory',
-            'url'         => 'admin/sales&inventory',
-            'icon'        => 'fas fa-dolly',
-            'label'       => 4,
-            'label_color' => 'dark',
+
+            'text'    => 'Social Worker',
+            'icon'    => 'fas fa-user-nurse',
+            'submenu' => [
+                [
+                    'text' => 'View Social Worker',
+                    'icon' => 'fas fa-list-alt',         
+                    'url'  => '/admin/social-workers',
+                ],
+                
+                [
+                    'text' => 'Add Social Worker',
+                    'icon' => 'fas fa-plus-circle',
+                    'url'  => 'admin/social-workers/create',
+                ],
+                
+            ],
         ],
+
+        [
+
+            'text'    => 'Reports',
+            'icon'    => 'fas fa-chart-line',
+            'submenu' => [
+                [
+                    'text' => 'Social Workers Reports',
+                    'icon' => 'fas fa-chart-line',         
+                    'url'  => '/admin/social-workers/reports',
+                ],
+                
+                
+                
+            ],
+        ],
+        
+        
+        
+       
       
         [
-            'text'        => 'Sales report',
-            'url'         => 'admin/salesreport',
-            'icon'        => 'fas fa-file-invoice-dollar',
-            'label'       => 4,
-            'label_color' => 'danger',
-        ],
-        [
-            'text'        => 'User Management',
+
+            'text'    => 'Settings',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                   'text'        => 'User Management',
             'url'         => 'admin/salesreport',
             'icon'        => 'fas fas fa-users',
             'label'       => 4,
             'label_color' => 'light',
-        ],
-        // ['header' => 'account_settings'],
-        // [
-        //     'text' => 'profile',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-user',
-            
-        // ],
-        // [
-        //     'text' => 'change_password',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-lock',
-        // ],
-        [
-
-            'text'    => 'Account Settings',
-            'icon'    => 'fas fa-fw fa-user',
-            'submenu' => [
-                [
-                    'text' => 'profile',
-                    'icon' => 'far fa-address-book',
-                    
-                    'url'  => '#',
                 ],
                 // [
-                //     'text'    => 'level_one',
-                //     'url'     => '#',
-                //     'submenu' => [
-                //         [
-                //             'text' => 'level_two',
-                //             'url'  => '#',
-                //         ],
-                //         [
-                //             'text'    => 'level_two',
-                //             'url'     => '#',
-                //             'submenu' => [
-                //                 [
-                //                     'text' => 'level_three',
-                //                     'url'  => '#',
-                //                 ],
-                //                 [
-                //                     'text' => 'level_three',
-                //                     'url'  => '#',
-                //                 ],
-                //             ],
-                //         ],
-                //     ],
-                // ],
+               
                 [
                     'text' => 'change password',
                     'icon' => 'fas fa-fw fa-lock',
@@ -430,6 +456,14 @@ return [
                 ],
             ],
         ],
+        // [
+        //     'text'        => 'Logout',
+        //     'url'         => 'logout',
+        //     'icon'        => 'fas fa-sign-out-alt',
+            
+            
+        // ],
+        
         // ['header' => 'labels'],
         // [
         //     'text'       => 'important',

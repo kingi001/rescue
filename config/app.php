@@ -163,6 +163,7 @@ return [
         /*
          * Application Service Providers...
          */
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
@@ -180,6 +181,7 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
+    'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
